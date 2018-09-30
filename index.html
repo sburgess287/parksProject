@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>National Parks Search Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>National Parks Search Form</h1>
+
+        <form id="js-form">
+            <label for="search-term">Search Park Name</label>
+            <input type="text" name="search-term" id="js-search-term" required>
+            <label for="max-results">Maximum results</label>
+            <input type="number" name="max-results" id="js-max-results" value="10">
+            <input type="submit" value="Enter Search">
+        </form>
+        <p id="js-error-message" class="error-message"></p>
+        <section id="results" class="hidden">
+            <h2>Search Results</h2>
+            <ul id="results-list">
+            </ul>
+        </section>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
