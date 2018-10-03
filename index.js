@@ -18,16 +18,18 @@ function displayResults(responseJson){
     // for each park object in the items array, add list item
     // to the results list with the full name, description, website url, address
     for (let i = 0; i < responseJson.data.length; i++){
-    $('#results-list').append(
-        `<li><h3>${responseJson.data[i].fullName}</h3>
-        <p>${responseJson.data[i].url}</p>
-        <p>Address: ${responseJson.data[i].addresses[i].line2}</p>
-        <p>City: ${responseJson.data[i].addresses[i].city}</p>
-        <p>State: ${responseJson.data[i].addresses[i].stateCode}</p>
-        <p>Postal Code: ${responseJson.data[i].addresses[i].postalCode}</p>
-        <p>${responseJson.data[i].description}
-        </li>`
-    )};
+        console.log(responseJson.data[i]);
+        $('#results-list').append(
+            `<li><h3>${responseJson.data[i].fullName}</h3>
+            <p>${responseJson.data[i].url}</p>
+            <p>Address: ${responseJson.data[i].addresses[0].line2}</p>
+            <p>City: ${responseJson.data[i].addresses[0].city}</p>
+            <p>State: ${responseJson.data[i].addresses[0].stateCode}</p>
+            <p>Postal Code: ${responseJson.data[i].addresses[0].postalCode}</p>
+            <p>${responseJson.data[i].description}
+            </li>`
+        )
+    };
     //display the results section  
     $('#results').removeClass('hidden');
 }
